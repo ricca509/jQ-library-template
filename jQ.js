@@ -10,7 +10,8 @@ var jQ = (function (window, undefined) {
         // Core functions
         // Add all core functions here, be sure to return 'this' to enable cascading
         init: function (args) {
-            // Check args and initialize the local variables attaching them to 'this'
+            // The init function gets called by the constructor.
+            // Check args and initialize local variables attaching them to 'this'
             if (args === undefined) {
                 return this;
             } else {
@@ -27,8 +28,8 @@ var jQ = (function (window, undefined) {
     };
 
     // The prototype object provides shared properties for other objects:
-    // assigning the jQ prototype to the init prototype I'm sure the object 
-    // I return has all the methods declared
+    // assigning the 'jQ' prototype to the 'init' prototype I'm sure the object
+    // I return has all the methods declared for jQ
     jQ.fn.init.prototype = jQ.fn;
 
     // Attach the constructor function to the window object

@@ -2,7 +2,7 @@ What is jQ
 --------------------------------------
 jQ is a simple effort in creating a small library template that works as jQuery works.
 
-How do you build a library that you call like
+How do you build a library that you call and use like jQuery?
 ```javascript
 jQ('something').method1().method2();
 ```
