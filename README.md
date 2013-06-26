@@ -17,8 +17,27 @@ git clone --depth=1 https://github.com/ricca509/jQ-library-template.git
 
 **Using it**
 
+As with jQuery
 ```javascript
 jQ('something').method1().method2();
+```
+
+Extend with your own method, accessing the object properties
+```javascript
+jQ.fn.extendMethod = function () {
+    console.log(this.args);
+
+    return this;
+}
+```
+
+jQ is a normal object, attach utility methods to it (like $.ajax)
+```javascript
+jQ.utility = function() {
+	console.log('utility');        
+};
+
+jQ.utility();
 ```
 
 If you have any questions or feedback, feel free to contact me using [@CoppolaRiccardo](https://twitter.com/CoppolaRiccardo) on Twitter.

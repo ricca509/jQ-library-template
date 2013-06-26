@@ -19,7 +19,7 @@ test('jQ sets the args property correctly', function () {
 test('Extend library', function () {
     // Extend the library
     jQ.fn.extendMethod = function () {
-        console.log('Extend method called');
+        console.log(this.args);
 
         return this;
     }
