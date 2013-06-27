@@ -27,6 +27,23 @@ var jQ = (function (window, undefined) {
         }
     };
 
+    // Utility methods
+
+    // Extend obj1 with properties in obj2 (overrides and add where necessary)
+    jQ.extend = function(obj1, obj2) {
+        if (!(typeof(obj1) === 'object' && typeof(obj2) === 'object')) {
+            return undefined;
+        }
+
+        for (var prop in obj2) {
+            if (obj2.hasOwnProperty(prop)) {
+                obj1[prop] = obj2[prop];
+            }
+        }        
+
+        return obj1;
+    };
+
     // The prototype object provides shared properties for other objects:
     // assigning the 'jQ' prototype to the 'init' prototype I'm sure the object
     // I return has all the methods declared for jQ

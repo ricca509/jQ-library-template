@@ -16,7 +16,7 @@ test('jQ sets the args property correctly', function () {
     deepEqual(jQ(argObj).args, argObj);
 });
 
-test('Extend library', function () {
+test('Extend library prototype', function () {
     // Extend the library
     jQ.fn.extendMethod = function () {
         console.log(this.args);
@@ -25,4 +25,24 @@ test('Extend library', function () {
     }
 
     ok(jQ.fn.hasOwnProperty('extendMethod'));
+});
+
+test('The "extend" method works', function () {
+    var def = {
+        a: 1,
+        b: 2
+    };
+
+    var ext = {
+        a: 3,
+        c: 16
+    };
+
+    def = jQ.extend(def, ext);
+
+    deepEqual(def, {
+        a: 3,
+        b: 2,
+        c: 16
+    });
 });
